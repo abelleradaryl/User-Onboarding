@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Form = (props) => {
-  const {change, submit, errors} = props;
+  const {change, submit, errors, disabled} = props;
   const {username, email, password, terms, checked} = props.values;
 
   const onSubmit = event => {
@@ -25,7 +25,7 @@ const Form = (props) => {
         <form className='input' onSubmit={onSubmit}>
             <label>Name:
             <input
-                placeholder='Enter Name'
+                placeholder='Enter Full Name'
                 value={username}
                 onChange={onChange}
                 name="username"
@@ -62,7 +62,7 @@ const Form = (props) => {
                 onChange={onChange}
             />
             </label>
-            <input type="submit" value="Create User!"/>
+            <input disabled={disabled} type="submit" value="Create User!"/>
         </form>
     </div>
   )
